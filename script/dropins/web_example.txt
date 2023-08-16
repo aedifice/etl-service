@@ -1,0 +1,16 @@
+-- Add a description for what your command does.
+-- Comments can span multiple lines and start with "-- ". Certain special lines,
+-- like the source, also start with "-- ". These lines provide configuration details.
+
+-- Commands must include a source: what sort of parser should we use for the command?
+-- This example retrieves data from an API, so its source is "webservice".
+-- @source webservice
+
+-- When we retrieve data from a webservice, we must provide a line that contains
+-- the ACTION and URL. For example, we want to GET data from Open Library.
+-- Do I use Open Library a lot for my examples? Yes, yes I do.
+GET https://openlibrary.org/books/OL31834369M.json
+
+-- Any additional lines can be used to configure headers, like specifying that
+-- we expect a JSON value in return.
+accept application/json
