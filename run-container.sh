@@ -1,1 +1,1 @@
-docker run -it --rm -p 3513:3513 etl_dropins
+docker run -it --rm -p 3513:3513 -v $(pwd)/script/dropins:/app/dropins:ro --name etl_dropins etl_dropins

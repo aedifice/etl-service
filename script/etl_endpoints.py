@@ -7,7 +7,7 @@ from dropin_parser import parse_dropin
 from sources.web_parser import query_web
 
 DROPIN_DIR = "dropins/"
-DEFAULT_SINK = "http://172.17.0.1:3514/etl/"    # this is where we want to send our data
+DEFAULT_SINK = "http://host.docker.internal:3514/etl/"    # this is where we want to send our data
 
 def dropin_list():
     dropins = []
