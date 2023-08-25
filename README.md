@@ -22,7 +22,7 @@ Each source will have its own dropin command format and its own command parser t
 
 ## Using the service
 
-Note that this service is currently configured to send results to another web service instead of a true data warehouse and will post its results to a path starting with the `DEFAULT_SINK` constant. Example data sink coming soon.
+Note that this service is currently configured to send results to another web service instead of a true data warehouse and will post its results to a path starting with the `DEFAULT_SINK` constant. See associated [example data sink](https://github.com/aedifice/etl-sink).
 
 **Running the service**
 
