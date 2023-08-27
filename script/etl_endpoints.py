@@ -5,6 +5,7 @@ from flask import request
 from flask_restful import Resource
 from dropin_parser import parse_dropin
 from sources.web_parser import query_web
+from sources.mysql_connector import query_sql
 
 DROPIN_DIR = "dropins/"
 DEFAULT_SINK = "http://host.docker.internal:3514/etl/"    # this is where we want to send our data
@@ -36,9 +37,8 @@ class RunCommand(Resource):
         # where does our parsed command say we need to go?
         if "source" not in parsed_cmd:
             return {"error": f"No query source found in {command} dropin."}
-        elif parsed_cmd["source"] == "sql":
-            # TODO: implement db query
-            query_result = ""
+        elif parsed_cmd["source"] == "mysql":
+            query_result = query_sql(parsed_cmd["query"])
         elif parsed_cmd["source"] == "webservice":
             query_result = query_web(parsed_cmd["query"])
         else:
