@@ -1,0 +1,14 @@
+-- Add a description for what your command does. 
+-- Comments can span multiple lines and start with "-- ". Certain special lines, 
+-- like the source, also start with "-- ". These lines provide configuration details. 
+
+-- Commands must include a source: what sort of parser should we use for the command? 
+-- This example retrieves data from a MySQL instance, so its source is "mysql". 
+-- @source mysql
+
+-- The command itself is a standard SQL query.
+SELECT title,
+    author,
+    pages
+FROM books
+WHERE pages > 200;

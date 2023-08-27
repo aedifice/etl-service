@@ -1,0 +1,20 @@
+services:
+  etl-dropins:
+    build: .
+    env_file:
+      - ./config/etlsql.env
+    ports:
+      - "3513:3513"
+    volumes:
+      - ./script/dropins:/app/dropins:ro
+  etl-sql:
+    image: mysql:8
+    env_file:
+      - ./config/etlsql.env
+    ports:
+      - "3306:3306"
+    volumes:
+      - etlsql:/var/lib/mysql
+
+volumes:
+  etlsql: 
